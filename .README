@@ -1,0 +1,5 @@
+Have your own hosted or use the cloud peer server
+
+npm i -g peer
+
+peerjs --port <PORT_NUMBER>
