@@ -24,6 +24,10 @@ io.on('connection', (socket) => {
         socket.join(roomId)
         //send message to everyone connected to the room except myself (broadcast)
         socket.broadcast.to(roomId).emit('user-connected', userId)
+
+        socket.on('disconnect', () => {
+            socket.broadcast.to(roomId).emit('user-disconnected', userId)
+        })
     })
 })
 
